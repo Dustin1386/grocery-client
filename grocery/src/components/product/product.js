@@ -19,7 +19,7 @@ class Product extends Component {
       handleAddProduct = (name,location) =>{  
         let payload = { name:name, location:location};
         console.log(payload)
-        return fetch('http://localhost:8000/api/items', {
+        return fetch('https://arcane-headland-93940.herokuapp.com/api/items', {
             method: 'POST',
             headers: {
               'content-type': 'application/json',

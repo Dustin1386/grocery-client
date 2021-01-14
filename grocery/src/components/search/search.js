@@ -25,7 +25,7 @@ class Search extends Component {
     }
 //basic fetch call to return all items
     getAllItems = () =>{
-        fetch('http://localhost:8000/api/items')
+        fetch('https://arcane-headland-93940.herokuapp.com/api/items')
      .then(res => res.json())
      .then((data) => {
          console.log("got items", data)
