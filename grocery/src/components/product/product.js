@@ -1,92 +1,70 @@
 import React, { Component } from 'react'
-
-
+import './popout.css';
+import Nav from '../nav/nav'
 
 
 class Product extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
+        this.state = {  
+          name:"",
           newItem: "",
-          list: [],
-          location: ""
+          inputTargetValue: "",
+          showMe: false
         };
+       
       }
-    
-      updateInput(key, value) {
-        // update react state
-        this.setState({ [key]: value });
+      
+      handleAddProduct = (name,location) =>{  
+        let payload = { name:name, location:location};
+        console.log(payload)
+        return fetch('http://localhost:8000/api/items', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+          })
+            .then(res =>
+              (!res.ok)
+                ? res.json().then(err => Promise.reject(err))
+                : res.json()
+            )
       }
-    
-      addItem() {
-        // create a new item
-        const newItem = {
-          id: 1 + Math.random(),
-          value: this.state.newItem.slice()
-        };
-    
-        // copy current list of items
-        const list = [...this.state.list];
-    
-        // add the new item to the list
-        list.push(newItem);
-    
-        // update state with new list, reset the new item input
+
+    handleSubmit = (e) =>{
+        e.preventDefault();
+        const {name, location}=e.target
+        this.handleAddProduct(name.value, location.value);
         this.setState({
-          list,
-          newItem: ""
-        });
-      }
+            showMe:true,
+            name:name.value
+        })
+   }
+
+
     
-      deleteItem(id) {
-        // copy current list of items
-        const list = [...this.state.list];
-        // filter out the item being deleted
-        const updatedList = list.filter(item => item.id !== id);
-    
-        this.setState({ list: updatedList });
-      }
-    
+      
       render() {
         return (
-          <div className="App">
-            <header className="App-header">
-              <h3 className="App-title">Add your item and its location</h3>
-            </header>
-            <div
-            >
-             <h3>Add an item to the list</h3> 
-              <br />
-              <input
-                type="text"
-                placeholder="Type item here"
-                value={this.state.newItem}
-                onChange={e => this.updateInput("newItem", e.target.value)}
-              />
-              <button
-                onClick={() => this.addItem()}
-                disabled={!this.state.newItem.length}
-              >
-                &#43; Add
-              </button>
-              <br /> <br />
-              <ul>
-                {this.state.list.map(item => {
-                  return (
-                    <li key={item.id}>
-                      {item.value}
-                      <button onClick={() => this.deleteItem(item.id)}>
-                        Remove
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
+          <div className="mainText">
+            <Nav />
+              <form onSubmit = {(e)=> this.handleSubmit(e)}>
+              <label className="subText2" htmlFor="input-a">Product </label>
+            <input className="subText" type="text" name="name"  required></input>
+            <label className="subText2" htmlFor="input-a">Location </label>
+            <input className="subText" type="text" name="location"  required></input>
+            <button type="submit">Add me</button>
+              </form>
+              <div>
+               
+              {this.state.showMe? <div className="popOut sb1" >{`${this.state.name}`} have been added</div>:null}
+              </div>
           </div>
         );
       }
     }
 
 export default Product
+
