@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import {Switch } from 'react-router-dom'
 
 import LandingRoute from '../routes/landingRoute';
 import ProductRoute from '../routes/productRoute'
