@@ -54,7 +54,7 @@ class Product extends Component {
               <label className="subText2" htmlFor="input-a">Product </label>
             <input className="subText" type="text" name="name"  required></input>
             <label className="subText2" htmlFor="input-a">Location </label>
-            <input className="subText" type="text" name="location"  required></input>
+            <input className="subText" type="number" name="location"  required></input>
             <button type="submit">Add me</button>
               </form>
               <div>
