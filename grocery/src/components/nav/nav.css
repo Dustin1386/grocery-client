@@ -24,7 +24,7 @@
    color: white;
   }
   .sidebar a{
-    color:grey;
+    color:white;
     border-bottom: 1px solid white;
     padding-left: 30px;
     text-decoration: none;
@@ -62,7 +62,7 @@ font-size: 18px;
 }
 
 .sidebar a{
-    color:grey;
+    color:white;
     border-bottom: 1px solid white;
     padding-left: 55px;
     text-decoration: none;

@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Grocery App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##### Repositories
 
-## Available Scripts
+Server Repo: https://github.com/Dustin1386/grocery-api
+Client Repo: https://github.com/Dustin1386/grocery-client
 
-In the project directory, you can run:
+##### Live Links
 
-### `npm start`
+Vercel Client - Live Link - https://grocery-fgiqtqu4w.vercel.app/
+Heroku Server - Live Link - https://dashboard.heroku.com/apps/arcane-headland-93940
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Summary
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I frequently go to the grocery store and have a hard time finding certain items,I created this app to help solve that. 
+This app lets you enter the location of various products in the store and their location to make them easy to find. 
 
-### `npm test`
+![image](https://github.com/Dustin1386/grocery-api/blob/master/screenshot-grocery-fgiqtqu4w-vercel-app-1610742292840.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## API Documentation
 
-### `npm run build`
+### GET /api/items
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Returns an array of items from the server.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Example Response
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+getAllItems(knex) {
+        return knex('items').select('*')
+    },
+```
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### POST /api/items
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+A submission of a grocery item. Requires name and location.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### PATCH /api/items/:ts_id
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### GET /api/items
 
-### Code Splitting
+Returns an array of items from the server.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Example Response
 
-### Analyzing the Bundle Size
+```
+[
+    {
+        "item_id": 1,
+        "location": "11",
+        "location_id": "tt9397902",
+    
+    }
+]
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+##### FrontEnd
 
-### Advanced Configuration
+- JavaScript
+- React
+- React-Router
+- Context
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+##### Backend
 
-### Deployment
+- NodeJs
+- Express
+- Knex
+- CORS
+- Chai, Mocha, supertest (testing)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+##### Server
 
-### `npm run build` fails to minify
+- PostgreSQL
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
