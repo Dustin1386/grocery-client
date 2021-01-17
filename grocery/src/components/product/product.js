@@ -48,8 +48,9 @@ class Product extends Component {
      // renders html for the product page 
       render() {
         return (
-          <div className="mainText">
+          <div>
             <Nav />
+          <div className="mainText">
               <form onSubmit = {(e)=> this.handleSubmit(e)}>
               <label className="subText2" htmlFor="input-a">Product </label>
             <input className="subText" type="text"  name="name"  required></input>
@@ -61,6 +62,7 @@ class Product extends Component {
                
               {this.state.showMe? <div className="popOut sb1" >{`${this.state.name}`} have been added</div>:null}
               </div>
+          </div>
           </div>
         );
       }

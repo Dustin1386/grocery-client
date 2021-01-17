@@ -12,8 +12,8 @@ class About extends Component {
             <body >
                 <Nav />
                 <div className="mainText">
-                <h1 class="subText2">About The App</h1>
-                <h3 class="subText2">I created this application because I often have no idea where 
+                <h1 className="subText2">About The App</h1>
+                <h3 className="subText2">I created this application because I often have no idea where 
                 items are. It can be frustrating, so I decided to take action and create this revolutionary product. 
                 </h3>
                </div>
