@@ -1,6 +1,7 @@
 import config from '../config'
 
 const itemService = {
+    //fetch call to GET items
     getItem(item){
         return fetch(`${config.API_ENDPOINT}/item`,{
             method: 'GET',
@@ -15,6 +16,7 @@ const itemService = {
             : res.json()
         })
     },
+    //fetch call to POST items
     postItem(item){
         return fetch(`${config.API_ENDPOINT}/item`,{
             method: 'POST',

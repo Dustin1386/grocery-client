@@ -11,4 +11,4 @@ class AboutRoute extends Component {
   }
 }
 
-export default LandingRoute
+export default AboutRoute

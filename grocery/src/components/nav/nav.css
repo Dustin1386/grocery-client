@@ -1,36 +1,38 @@
+/* Style the navigation menu */
 .sidebar {
-  width: 100%;
-  float: left;
-  background-color: rgb(49,36,80);
-  margin-bottom: 10px;
-  
-  
-  }
-  
-  .sidebar div {
-  padding: 8px;
-  font-size: 0.6em;
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
 
-  display: inline;
-  }
-  
-  .body-text {
-  margin-left: 150px;
-  font-size: 0.6em;
+/* Hide the links inside the navigation menu (except for logo/home) */
+.sidebar #myLinks {
+  display: none;
+}
 
-  }
+/* Style navigation menu links */
+.sidebar a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
 
-  .sidebar a:hover {
-   color: white;
-  }
-  .sidebar a{
-    color:white;
-    border-bottom: 1px solid white;
-    padding-left: 30px;
-    text-decoration: none;
-    
-    
-  }
+/* Style the hamburger menu */
+.sidebar a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.sidebar a:hover {
+  background-color: #ddd;
+  color: black;
+}
   
  
   

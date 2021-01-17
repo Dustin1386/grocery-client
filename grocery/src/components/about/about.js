@@ -6,7 +6,7 @@ class About extends Component {
 
 
 
-
+//renders html for About page
     render() {
         return (
             <body >

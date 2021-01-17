@@ -17,10 +17,7 @@ class Search extends Component {
     
     //provides the function to search by filtering items then returns the filtered items that match the input
     handleSearch = () => {
-    //  this.setState({items:this.state.items.filter(item => {
-    //     return item.name.toLocaleLowerCase()  === this.state.inputValue.toLocaleLowerCase()
-        
-    //  })})
+    
    
     }
 //basic fetch call to return all items

@@ -7,7 +7,7 @@ class Landing extends Component {
 
 
 
-
+//renders html for Landing page
     render() {
         return (
             <body >

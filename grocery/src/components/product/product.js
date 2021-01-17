@@ -4,7 +4,7 @@ import Nav from '../nav/nav'
 
 
 class Product extends Component {
-
+//main constructor which holds state
     constructor(props) {
         super(props);
         this.state = {  
@@ -15,7 +15,7 @@ class Product extends Component {
         };
        
       }
-      
+    // handles the function of adding a product to the database   
       handleAddProduct = (name,location) =>{  
         let payload = { name:name, location:location};
         console.log(payload)
@@ -32,7 +32,7 @@ class Product extends Component {
                 : res.json()
             )
       }
-
+      // handles the process of running function when form is submitted 
     handleSubmit = (e) =>{
         e.preventDefault();
         const {name, location}=e.target
@@ -45,7 +45,7 @@ class Product extends Component {
 
 
     
-      
+     // renders html for the product page 
       render() {
         return (
           <div className="mainText">

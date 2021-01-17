@@ -6,7 +6,7 @@ class Nav extends Component {
 
 
 
-
+//renders the html for nav bar
     render() {
         return (
           <div>
